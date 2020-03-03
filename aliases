@@ -1,0 +1,3 @@
+# ucsd related
+alias edlye='cd ~/arbisoft/ucsd/edx/edx-platform/ && source ../../bin/activate'
+alias edlyd='cd ~/arbisoft/ucsd/edx/devstack/ && source ../../bin/activate'
