@@ -108,3 +108,6 @@ export OPENEDX_RELEASE=ironwood.master
 
 # import aliases
 source ~/umar_dotfiles/aliases
+
+export NVM_DIR="/Users/umarkhan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
