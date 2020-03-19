@@ -1,3 +1,278 @@
-# ucsd related
-alias edlye='cd ~/arbisoft/ucsd/edx/edx-platform/ && source ../../bin/activate'
-alias edlyd='cd ~/arbisoft/ucsd/edx/devstack/ && source ../../bin/activate'
+# master related aliases
+#
+# export all the environment related variables for master
+alias mvars='export DEVSTACK_WORKSPACE=~/edly/master/ && export OPENEDX_RELEASE="" && export COMPOSE_PROiECT_NAME=""'
+#
+# Exporting variables and activating virtual environment
+alias menv='mvars && source ~/edly/master/venv3/bin/activate'
+#
+# Going to devstack dir
+alias mdev='menv && cd ~/edly/master/devstack/'
+#
+# Going to edx-platform dir
+alias medx='menv && cd ~/edly/master/edx-platform/'
+#
+# Going to ecommerce dir
+alias mecom='menv && cd ~/edly/master/ecommerce/'
+#
+# Going to course discovery dir
+alias mdis='menv && cd ~/edly/master/course-discovery/'
+#
+# Starting devstack
+alias mstart='mdev && make dev.up'
+#
+# Going to src
+alias msrc='menv && cd ~/edly/master/src'
+# Going to root
+alias mroot='menv && cd ~/edly/master/'
+#
+# Going into lms shell
+alias mlshell='mdev && make lms-shell'
+#
+# Going into cms shell
+alias msshell='mdev && make cms-shell'
+#
+# Going into lms attach
+alias mlattach='mdev && make lms-attach'
+#
+# Going into cms attach
+alias msattach='mdev && make cms-attach'
+#
+# Going into lms logs
+alias mllogs='mdev && make lms-logs'
+#
+# Going into cms logs
+alias mslogs='mdev && make cms-logs'
+
+
+
+# tutor related aliases
+alias trender='cd "$(tutor config printroot)/env/build/openedx/themes/" && tutor config render --extra-config ./openedx_theme/config.yml ./openedx_theme/theme "$(tutor config printroot)/env/build/openedx/themes/openedx_theme"'
+alias troot='cd "$(tutor config printroot)"'
+alias ttheme='cd "$(tutor config printroot)/env/build/openedx/themes/openedx_theme"'
+alias tedx='cd ~/edly/koa/edx-platform/'
+alias tbuild='tutor images build openedx'
+alias tstart='tutor dev start'
+alias tstop='tutor dev stop'
+alias twatch='tutor dev run watchthemes'
+alias tlshell='tutor dev run lms bash'
+alias tsshell='tutor dev run cms bash'
+alias tlstart='tutor dev runserver lms'
+alias tsstart='tutor dev runserver cms'
+alias tlpython='tutor dev run lms ./manage.py lms shell'
+alias tspython='tutor dev run cms ./manage.py cms shell'
+alias tassets='tutor dev run lms openedx-assets build --env=dev'
+alias tplugin='cd "$(tutor plugins printroot)"'
+
+
+
+# to open daily notes
+alias dn='code /Users/umarkhan/MEGA/MEGAsync/notes'
+
+#remove all docker containers
+alias rcont='docker rm -f $(docker ps -a -q)'
+
+# remove .pyc files
+alias rpyc='find . -name "*.pyc" -exec rm -f {} \;'
+
+# going to directory which contians all pem files
+alias pem='cd ~/umar_pem_files'
+
+# comiting and ammending the changes in tracked files
+alias alo='git add -u && git commit --amend --no-edit --allow-empty && git status'
+
+# to checkout the previous git branch
+alias side='git checkout -'
+# to checkout the master branch
+alias mas='git checkout master'
+
+
+# ironwood related aliases
+#
+# export all the environment related variables for ironwood
+alias ivars='export DEVSTACK_WORKSPACE=~/edly/ironwood/ && export OPENEDX_RELEASE="ironwood.master" && export COMPOSE_PROiECT_NAME="devstack-ironwood.master"'
+#
+# Exporting variables and activating virtual environment
+alias ienv='ivars && source ~/edly/ironwood/venv2/bin/activate'
+#
+# Going to devstack dir
+alias idev='ienv && cd ~/edly/ironwood/devstack/ && git checkout open-release/ironwood.master'
+#
+# Going to edx-platform dir
+alias iedx='ienv && cd ~/edly/ironwood/edx-platform/'
+#
+# Going to ecommerce dir
+alias iecom='ienv && cd ~/edly/ironwood/ecommerce/'
+#
+# Going to course discovery dir
+alias idis='ienv && cd ~/edly/ironwood/course-discovery/'
+#
+# Starting devstack
+alias istart='idev && make dev.up.lms+cms+ecommerce+discovery+forum+elasticsearch+devpi'
+#
+# Going to src
+alias isrc='ienv && cd ~/edly/ironwood/src'
+# Going to root
+alias iroot='ienv && cd ~/edly/ironwood/'
+#
+# Going into lms shell
+alias ilshell='idev && make lms-shell'
+#
+# Going into cms shell
+alias isshell='idev && make cms-shell'
+#
+# Going into lms attach
+alias ilattach='idev && make lms-attach'
+#
+# Going into cms attach
+alias isattach='idev && make cms-attach'
+#
+# Going into lms logs
+alias illogs='idev && make lms-logs'
+#
+# Going into cms logs
+alias islogs='idev && make cms-logs'
+
+
+
+# juniper related aliases
+#
+# export all the environment related variables for juniper
+alias jvars='export DEVSTACK_WORKSPACE=~/edly/juniper/ && export OPENEDX_RELEASE="juniper.master" && export COMPOSE_PROJECT_NAME="devstack-juniper.master"'
+#
+# Exporting variables and activating virtual environment
+alias jenv='jvars && source ~/edly/juniper/venv3/bin/activate'
+#
+# Going to devstack dir
+alias jdev='jenv && cd ~/edly/juniper/devstack/ && git checkout open-release/juniper.master'
+#
+# Going to edx-platform dir
+alias jedx='jenv && cd ~/edly/juniper/edx-platform/'
+#
+# Going to ecommerce dir
+alias jecom='jenv && cd ~/edly/juniper/ecommerce/'
+#
+# Going to course discovery dir
+alias jdis='jenv && cd ~/edly/juniper/course-discovery/'
+#
+# Starting devstack
+alias jstart='jdev && make dev.up.lms+cms+ecommerce+discovery+forum+elasticsearch+devpi'
+#
+# Going to src
+alias jsrc='jenv && cd ~/edly/juniper/src'
+# Going to root
+alias jroot='jenv && cd ~/edly/juniper/'
+#
+# Going into lms shell
+alias jlshell='jdev && make lms-shell'
+#
+# Going into cms shell
+alias jsshell='jdev && make cms-shell'
+#
+# Going into lms attach
+alias jlattach='jdev && make lms-attach'
+#
+# Going into cms attach
+alias jsattach='jdev && make cms-attach'
+#
+# Going into lms logs
+alias jllogs='jdev && make lms-logs'
+#
+# Going into cms logs
+alias jslogs='jdev && make cms-logs'
+
+
+
+# Koa related aliases
+#
+# export all the environment related variables for Koa
+alias kvars='export DEVSTACK_WORKSPACE=~/edly/koa/ && export OPENEDX_RELEASE="koa.master" && export COMPOSE_PROJECT_NAME="devstack-koa.master"'
+#
+# Exporting variables and activating virtual environment
+alias kenv='kvars && source ~/edly/koa/venv3/bin/activate'
+#
+# Going to devstack dir
+alias kdev='kenv && cd ~/edly/koa/devstack/ && git checkout open-release/koa.master'
+#
+# Going to edx-platform dir
+alias kedx='kenv && cd ~/edly/koa/edx-platform/'
+#
+# Going to ecommerce dir
+alias kecom='kenv && cd ~/edly/koa/ecommerce/'
+#
+# Going to course discovery dir
+alias kdis='kenv && cd ~/edly/koa/course-discovery/'
+#
+# Starting devstack
+alias kstart='kdev && make dev.up.lms+cms+ecommerce+discovery+forum+elasticsearch+devpi'
+#
+# Going to src
+alias ksrc='kenv && cd ~/edly/koa/src'
+# Going to root
+alias kroot='kenv && cd ~/edly/koa/'
+#
+# Going into lms shell
+alias klshell='kdev && make lms-shell'
+#
+# Going into cms shell
+alias ksshell='kdev && make cms-shell'
+#
+# Going into lms attach
+alias klattach='kdev && make lms-attach'
+#
+# Going into cms attach
+alias ksattach='kdev && make cms-attach'
+#
+# Going into lms logs
+alias kllogs='jdev && make lms-logs'
+#
+# Going into cms logs
+alias kslogs='jdev && make cms-logs'
+
+
+
+# lilac related aliases
+#
+# export all the environment related variables for lilac
+alias lvars='export DEVSTACK_WORKSPACE=~/edly/lilac/ && export OPENEDX_RELEASE="lilac.master" && export COMPOSE_PROJECT_NAME="devstack-lilac.master"'
+#
+# Exporting variables and activating virtual environment
+alias lenv='lvars && source ~/edly/lilac/venv3/bin/activate'
+#
+# Going to devstack dir
+alias ldev='lenv && cd ~/edly/lilac/devstack/ && git checkout open-release/lilac.master'
+#
+# Going to edx-platform dir
+alias ledx='lenv && cd ~/edly/lilac/edx-platform/'
+#
+# Going to ecommerce dir
+alias lecom='lenv && cd ~/edly/lilac/ecommerce/'
+#
+# Going to course discovery dir
+alias ldis='lenv && cd ~/edly/lilac/course-discovery/'
+#
+# Starting devstack
+alias lstart='ldev && make dev.up.lms+cms+ecommerce+discovery+forum+elasticsearch+devpi'
+#
+# Going to src
+alias lsrc='lenv && cd ~/edly/lilac/src'
+# Going to root
+alias lroot='lenv && cd ~/edly/lilac/'
+#
+# Going into lms shell
+alias llshell='ldev && make lms-shell'
+#
+# Going into cms shell
+alias lsshell='ldev && make cms-shell'
+#
+# Going into lms attach
+alias llattach='ldev && make lms-attach'
+#
+# Going into cms attach
+alias lsattach='ldev && make cms-attach'
+#
+# Going into lms logs
+alias lllogs='jdev && make lms-logs'
+#
+# Going into cms logs
+alias lslogs='jdev && make cms-logs'

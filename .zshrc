@@ -103,11 +103,32 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# export openedx realase
-export OPENEDX_RELEASE=ironwood.master
 
 # import aliases
 source ~/umar_dotfiles/aliases
 
 export NVM_DIR="/Users/umarkhan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+eval "$(direnv hook zsh)"
+export PATH="/Users/umarkhan/arbisoft/edx-proctoring:$PATH"
+export PATH="/Users/umarkhan/arbisoft/edx-proctoring:$PATH"
+
+# pyenv: use to manage different python versions
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+
+# custom function for notifications on command failiures
+# function f_notifyme {
+#     LAST_EXIT_CODE=$?
+#     CMD=$(fc -ln -1)
+#     # No point in waiting for the command to complete
+#     notify "$CMD" "$LAST_EXIT_CODE" &
+# }
+# export PS1='$(f_notifyme)'$PS1
+
+
+# Iterm shell integrations
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
