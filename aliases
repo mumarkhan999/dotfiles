@@ -1,3 +1,8 @@
 # ucsd related
 alias edlye='cd ~/arbisoft/ucsd/edx/edx-platform/ && source ../../bin/activate'
 alias edlyd='cd ~/arbisoft/ucsd/edx/devstack/ && source ../../bin/activate'
+alias sedlye='cd ~/arbisoft/ucsd/edx/edx-platform/ && source ../../bin/activate && make dev.up'
+alias sedlyd='cd ~/arbisoft/ucsd/edx/devstack/ && source ../../bin/activate &&  && make dev.up'
+
+# remove .pyc files
+alias rpyc='find . -name "*.pyc" -exec rm -f {} \;'
