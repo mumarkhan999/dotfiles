@@ -103,11 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# export openedx realase
-export OPENEDX_RELEASE=ironwood.master
 
 # import aliases
 source ~/umar_dotfiles/aliases
 
 export NVM_DIR="/Users/umarkhan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+eval "$(direnv hook zsh)"
