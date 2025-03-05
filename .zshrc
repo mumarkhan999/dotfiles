@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/umarkhan/.oh-my-zsh"
+export ZSH="/Users/umar.khan/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -105,14 +105,14 @@ source $ZSH/oh-my-zsh.sh
 
 
 # import aliases
-source ~/umar_dotfiles/aliases
+source ~/dotfiles/aliases
 
-export NVM_DIR="/Users/umarkhan/.nvm"
+export NVM_DIR="/Users/umar.khan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 eval "$(direnv hook zsh)"
-export PATH="/Users/umarkhan/arbisoft/edx-proctoring:$PATH"
-export PATH="/Users/umarkhan/arbisoft/edx-proctoring:$PATH"
+export PATH="/Users/umar.khan/arbisoft/edx-proctoring:$PATH"
+export PATH="/Users/umar.khan/arbisoft/edx-proctoring:$PATH"
 
 # pyenv: use to manage different python versions
 export PATH="$HOME/.pyenv/bin:$PATH"
